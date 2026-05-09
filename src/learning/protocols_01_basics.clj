@@ -21,16 +21,16 @@
 
 (defrecord Person [name age]
   Speakable
-  (speak [this]
+  (speak [_this]
     (str "Hello! My name is " name "."))
-  (greet [this other]
+  (greet [_this other]
     (str "Hello " (:name other) ", I'm " name ". Nice to meet you!")))
 
 (defrecord Dog [name breed]
   Speakable
-  (speak [this]
+  (speak [_this]
     "Woof! Woof!")
-  (greet [this other]
+  (greet [_this other]
     (str "Wags tail at " (:name other) ".")))
 
 ;; =============================================================================
