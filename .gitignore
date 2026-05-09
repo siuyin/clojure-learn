@@ -1,0 +1,4 @@
+.cpcache/
+*secret*
+*.swap
+linux-install.sh
