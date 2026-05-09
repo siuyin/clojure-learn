@@ -17,7 +17,7 @@
   Speakable
   (speak [this]
     (str "I am a string: \"" this "\""))
-  (greet [this other]
+  (greet [_this other]
     (str "String greeting to " (:name other))))
 
 ;; =============================================================================
@@ -28,20 +28,20 @@
 (extend-protocol Speakable
   ;; Handle nil (very useful for preventing NullPointerExceptions)
   nil
-  (speak [this] "Silence...")
-  (greet [this other] "... (the void stares back)")
+  (speak [_this] "Silence...")
+  (greet [_this _other] "... (the void stares back)")
 
   ;; Handle numbers
   java.lang.Long
   (speak [this] (str "Number " this " reporting for duty."))
-  (greet [this other] (str "Calculated greeting to " (:name other))))
+  (greet [_this other] (str "Calculated greeting to " (:name other))))
 
 ;; =============================================================================
 ;; 4. Usage
 ;; =============================================================================
 
 (defn demo []
-  (println "--- Extending Existing Types ---")
+  (println "\n\n+++ Extending Existing Types ---")
   (println "String speaking:" (speak "Hello World"))
   (println "Number speaking:" (speak 42))
   (println "Nil speaking:   " (speak nil))
