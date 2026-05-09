@@ -9,8 +9,8 @@
 
 (defprotocol Speakable
   "A protocol for things that can speak or make sounds."
-  (speak [this] "Returns a string representing the speech.")
-  (greet [this other] "Greets another entity."))
+  (speak [_this] "Returns a string representing the speech.")
+  (greet [_this other] "Greets another entity."))
 
 ;; =============================================================================
 ;; 2. What is a Record?
