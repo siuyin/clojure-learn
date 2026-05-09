@@ -22,7 +22,7 @@
 (defrecord Person [name age]
   Speakable
   (speak [this]
-    (str "Hello, my name is " name "."))
+    (str "Hello! My name is " name "."))
   (greet [this other]
     (str "Hello " (:name other) ", I'm " name ". Nice to meet you!")))
 
@@ -44,7 +44,7 @@
     (println "--- Basic Protocol Dispatch ---")
     (println "Alice says:" (speak alice))
     (println "Fido says: " (speak fido))
-    
+
     (println "\n--- Interaction ---")
     (println (greet alice fido))
     (println (greet fido alice))
@@ -53,7 +53,7 @@
     (println "Alice's name via keyword lookup:" (:name alice))
     (println "Update Alice's age via assoc:" (assoc alice :age 31))
     (println "Keys in Alice record:" (keys alice))
-    
+
     (println "\n--- Type Information ---")
     (println "Is Alice a Person?" (instance? Person alice))
     (println "Does Alice satisfy Speakable?" (satisfies? Speakable alice))))
