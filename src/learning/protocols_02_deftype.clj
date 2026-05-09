@@ -30,11 +30,11 @@
   (push [this item]
     (swap! state conj item)
     this)
-  (pop-item [this]
+  (pop-item [_this]
     (let [top (peek @state)]
       (swap! state pop)
       top))
-  (peek-item [this]
+  (peek-item [_this]
     (peek @state)))
 
 ;; =============================================================================
@@ -43,7 +43,7 @@
 
 (defn demo []
   (let [stack (SimpleStack. (atom []))]
-    
+
     (println "--- deftype in Action ---")
     (push stack "First")
     (push stack "Second")
@@ -52,14 +52,14 @@
     (println "Peeked again:" (peek-item stack))
 
     (println "\n--- Why it differs from defrecord ---")
-    
+
     ;; 1. No keyword lookup
     (println "Attempting keyword lookup (:state stack):" (:state stack) "(Returns nil)")
-    
+
     ;; 2. Not a map
     (try
       (keys stack)
-      (catch Exception e (println "Calling (keys stack) fails as expected.")))
+      (catch Exception _e (println "Calling (keys stack) fails as expected.")))
 
     (println "\n--- Type Information ---")
     (println "Is it a SimpleStack?" (instance? SimpleStack stack))
