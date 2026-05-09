@@ -40,8 +40,8 @@
 ;; 4. Usage
 ;; =============================================================================
 
-(defn demo []
-  (println "\n\n+++ Extending Existing Types ---")
+(defn demo03 []
+  (println "--- Extending Existing Types ---")
   (println "String speaking:" (speak "Hello World"))
   (println "Number speaking:" (speak 42))
   (println "Nil speaking:   " (speak nil))
@@ -52,4 +52,4 @@
     (println (greet 100 alice))
     (println (greet nil alice))))
 
-(demo)
+(demo03)

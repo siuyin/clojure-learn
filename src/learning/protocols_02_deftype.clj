@@ -41,7 +41,7 @@
 ;; 3. Usage & Comparison
 ;; =============================================================================
 
-(defn demo []
+(defn demo02 []
   (let [stack (SimpleStack. (atom []))]
 
     (println "--- deftype in Action ---")
@@ -65,4 +65,4 @@
     (println "Is it a SimpleStack?" (instance? SimpleStack stack))
     (println "Does it satisfy PStack?" (satisfies? PStack stack))))
 
-(demo)
+(demo02)

@@ -15,16 +15,16 @@
 (defn make-custom-speaker [my-name custom-sound]
   ;; reify captures 'my-name' and 'custom-sound' from the surrounding scope
   (reify Speakable
-    (speak [this]
+    (speak [_this]
       (str "I am " my-name " and I say: " custom-sound))
-    (greet [this other]
+    (greet [_this other]
       (str my-name " waves at " (:name other)))))
 
 ;; =============================================================================
 ;; 2. Usage & Comparison
 ;; =============================================================================
 
-(defn demo []
+(defn demo04 []
   (println "--- reify in Action ---")
   
   (let [robot (make-custom-speaker "Robo-9000" "Beep Boop")
@@ -46,4 +46,4 @@
     ;; Unlike records, reified objects are NOT maps
     (println "Is robot a map?" (map? robot))))
 
-(demo)
+(demo04)
