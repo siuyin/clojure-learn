@@ -1,6 +1,5 @@
 .cpcache/
 *secret*
 *.swap
-linux-install.sh
 .clj-kondo
 .lsp
