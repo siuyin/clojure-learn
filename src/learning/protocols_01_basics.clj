@@ -37,7 +37,7 @@
 ;; 3. Usage & Demonstration
 ;; =============================================================================
 
-(defn demo01 []
+(defn-  demo01 []
   (let [alice (->Person "Alice" 30)
         fido  (->Dog "Fido" "Golden Retriever")]
 
@@ -59,4 +59,4 @@
     (println "Does Alice satisfy Speakable?" (satisfies? Speakable alice))))
 
 ;; Run the demo
-;;(demo01)
+(demo01)
