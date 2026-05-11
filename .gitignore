@@ -1,5 +1,7 @@
-.cpcache/
+.cpcache
 *secret*
 *.swap
 .clj-kondo
 .lsp
+.calva
+target
