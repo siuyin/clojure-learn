@@ -1,11 +1,6 @@
 (ns learning.math-test
-  (:require [clojure.test :refer [deftest is testing run-tests]]))
-
-;; The function we are testing (usually this would be in a separate source file)
-(defn subtract
-  "Subtracts y from x."
-  [x y]
-  (- x y))
+  (:require [clojure.test :refer [deftest is testing]]
+            [learning.math :refer [subtract]]))
 
 (deftest subtract-test
   (testing "Basic subtraction with positive integers"
@@ -17,6 +12,8 @@
 
   (testing "Subtraction with floating point numbers"
     ;; Note: In real scenarios, use an epsilon check for float precision
-    (is (= 0.5 (subtract 1.0 0.5)))))
+    (is (= 0.5 (subtract 1.0 0.5))))
 
-(run-tests)
+  (testing "Subtracting zero"
+    (is (= 10 (subtract 10 0)))
+    (is (= 0 (subtract 0 0)))))
