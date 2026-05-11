@@ -1,4 +1,5 @@
-(ns learning.protocols-01-basics)
+(ns learning.protocols-01-basics
+  (:gen-class))
 
 ;; =============================================================================
 ;; 1. What is a Protocol?
@@ -58,5 +59,5 @@
     (println "Is Alice a Person?" (instance? Person alice))
     (println "Does Alice satisfy Speakable?" (satisfies? Speakable alice))))
 
-;; Run the demo
-(demo01)
+(defn -main [& _args]
+  (demo01))
