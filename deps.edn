@@ -3,6 +3,7 @@
 
  :aliases
  {:test {:extra-paths ["test"]
-         :extra-deps {com.cognitect/test-runner {:git/url "https://github.com/cognitect-labs/test-runner"
-                                                :sha "76568540e7f40268ad2b646110f237a60295fa3c"}}
-         :main-opts ["-m" "cognitect.test-runner"]}}}
+         :extra-deps {io.github.cognitect-labs/test-runner 
+                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+         :exec-fn cognitect.test-runner.api/test
+         :exec-args {:dirs ["test"]}}}}
